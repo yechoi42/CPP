@@ -6,13 +6,13 @@
 #    By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/15 20:12:23 by yechoi            #+#    #+#              #
-#    Updated: 2020/10/15 20:22:06 by yechoi           ###   ########.fr        #
+#    Updated: 2020/10/17 18:02:01 by yechoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= phonebook
 
-SRCS	= phonebook.cpp
+SRCS	= phonebook.cpp info.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 

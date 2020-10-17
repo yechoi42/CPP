@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   info.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 21:21:11 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/17 18:48:57 by yechoi           ###   ########.fr       */
+/*   Created: 2020/10/17 18:49:29 by yechoi            #+#    #+#             */
+/*   Updated: 2020/10/17 19:01:47 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-Phonebook::Phonebook(void)
+void    Info::inputInfo(void)
 {
-	num = 0;
-	std::cout<<"A new phonebook is created!"<<std::endl;
-}
+    std::cout<<"First Name: "
+    std::getline(std::cin, content[0]);   
 
-void    Phonebook::addContact(void)
-{
-	Info	info;
-
-	if (num >= 8)
-	{
-		std::cout<<"This phonebook is full :("<<std::endl;
-		return ;
-	}
-	info.inputInfo();
-	contact[num++] = info;
-}
-
-void    Phonebook::searchContact(void)
-{
-    
+    std::cout<<"First Name: "
+    std::getline(std::cin, content[0]);   
 }
