@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 20:52:39 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/16 21:20:52 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/18 17:18:53 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ std::string    showPrompt(void)
 {
     std::string cmd;
 
-    std::cout<<"Yechoi's Phonebook || input ADD, SEARCH or EXIT"<<std::endl;
+    std::cout<<"=============================================="<<std::endl;
+    std::cout<<"Phonebook || input ADD, SEARCH or EXIT: ";
     std::getline(std::cin, cmd);
+    std::cout<<"----------------------------------------------"<<std::endl;
     return (cmd);
 }
 
@@ -36,6 +38,10 @@ int     main(void)
         else if (cmd == "SEARCH")
             phonebook.searchContact();
         else if (cmd == "EXIT")
+        {
+            std::cout<<"deleting phonebook..."<<std::endl;
             exitFlag = 1;
+        }
     }
+    return (0);
 }

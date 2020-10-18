@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 20:32:04 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/16 21:10:29 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/18 15:02:07 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class Info
         std::string 	content[11];
     public:
 		void	inputInfo(void);
-		void	showInfo(void);
+		void	showBriefInfo(void);
+        void	showFullInfo(void);
 };
 
 #endif
