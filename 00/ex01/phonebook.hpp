@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 20:23:02 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/16 20:52:30 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/19 17:15:42 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Phonebook
     public:
         Phonebook(void);
         void    addContact(void);
-        void    searchContact(void);
+        int		searchContact(void);
 };
 
 #endif

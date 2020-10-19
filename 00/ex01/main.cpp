@@ -6,42 +6,42 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 20:52:39 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/18 17:18:53 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/19 17:45:44 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-std::string    showPrompt(void)
+void    showPrompt(void)
 {
-    std::string cmd;
-
     std::cout<<"=============================================="<<std::endl;
     std::cout<<"Phonebook || input ADD, SEARCH or EXIT: ";
-    std::getline(std::cin, cmd);
-    std::cout<<"----------------------------------------------"<<std::endl;
-    return (cmd);
 }
 
 int     main(void)
 {
-    int         exitFlag;
+    int         ret;
     std::string cmd;
     Phonebook   phonebook;
-
-    exitFlag = 0;
-    while (exitFlag == 0)
+    showPrompt();
+    while (std::getline(std::cin, cmd))
     {
-        cmd = showPrompt();
+        std::cout<<"----------------------------------------------"<<std::endl;
         if (cmd == "ADD")
             phonebook.addContact();
         else if (cmd == "SEARCH")
-            phonebook.searchContact();
+        {
+            if ((ret = phonebook.searchContact()) == -1)
+                return (-1);
+        }
         else if (cmd == "EXIT")
         {
             std::cout<<"deleting phonebook..."<<std::endl;
-            exitFlag = 1;
+            return (0);
         }
+        else
+            std::cout<<"Error: Wrong Command."<<std::endl<<std::endl;    
+        showPrompt();
     }
-    return (0);
+    return (-1);
 }

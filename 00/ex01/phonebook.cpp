@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:21:11 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/18 17:40:53 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/19 17:57:36 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,35 @@ void    Phonebook::addContact(void)
 	contact[num++].inputInfo();
 }
 
-void    Phonebook::searchContact(void)
+int    Phonebook::searchContact(void)
 {
 	int			i;
 	int			choice;
 	std::string	temp;
 
 	i = 0;
-	std::cout<<"index|first name|last name |nickname  "<<std::endl;
-	std::cout<<"--------------------------------------"<<std::endl;
+	std::cout<<"     index|first name| last name|  nickname"<<std::endl;
+	std::cout<<"-------------------------------------------"<<std::endl;
 	while (i < num)
 	{
-		std::cout<<i<<"    |";
+		std::cout<<std::setw(10);
+		std::cout<<i<<"|";
 		contact[i++].showBriefInfo();
 	}
 	std::cout<<std::endl<<">>>>> Choose index: ";
 	std::cin>>choice;
-	if (choice < num && choice >= 0)
-		contact[choice].showFullInfo();
-	else
+	if (std::cin.eof())
+		return (-1);
+	if (std::cin.fail()|| choice >= num || choice < 0)
 	{
 		std::cout<<"Error: Wrong Index."<<std::endl;
-		std::cin.ignore();
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
+	else
+	{
+		contact[choice].showFullInfo();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max());
+	}
+	return (0);
 }
