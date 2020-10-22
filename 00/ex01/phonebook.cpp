@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 21:21:11 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/19 17:57:36 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/22 14:29:40 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ int    Phonebook::searchContact(void)
 		contact[i++].showBriefInfo();
 	}
 	std::cout<<std::endl<<">>>>> Choose index: ";
-	std::cin>>choice;
+	std::cin>>temp;
 	if (std::cin.eof())
 		return (-1);
-	if (std::cin.fail()|| choice >= num || choice < 0)
+	choice = temp[0] - '0';
+	if (temp[1] || std::cin.fail() || choice >= num || choice < 0)
 	{
 		std::cout<<"Error: Wrong Index."<<std::endl;
 		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.ignore();
 	}
 	else
 	{
 		contact[choice].showFullInfo();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max());
 	}
 	return (0);
 }

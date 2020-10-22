@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 20:32:04 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/18 15:02:07 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/22 14:20:57 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <errno.h>
 
 class Info 
 {
