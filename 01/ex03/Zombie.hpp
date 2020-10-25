@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 16:33:42 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/25 13:18:11 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/10/25 13:10:06 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ class Zombie {
         Zombie();
         Zombie(std::string name, std::string type);
         void    announce(void);
+        void    insertMembers(std::string name, std::string type);
 };

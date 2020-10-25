@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 16:33:42 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/25 13:18:11 by yechoi           ###   ########.fr       */
+/*   Created: 2020/10/25 11:30:47 by yechoi            #+#    #+#             */
+/*   Updated: 2020/10/25 13:03:47 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
+#include <stdexcept>
 
-class Zombie {
-    private: 
-        std::string name;
-        std::string type;
+class ZombieHorde {
+    private:
+        Zombie  *zombies;
+        int     N;
     public:
-        Zombie();
-        Zombie(std::string name, std::string type);
+        ZombieHorde(int N);
         void    announce(void);
+        ~ZombieHorde();
 };

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 16:33:42 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/25 13:18:11 by yechoi           ###   ########.fr       */
+/*   Created: 2020/10/25 14:00:39 by yechoi            #+#    #+#             */
+/*   Updated: 2020/10/25 15:19:02 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Human.hpp"
 
-class Zombie {
-    private: 
-        std::string name;
-        std::string type;
-    public:
-        Zombie();
-        Zombie(std::string name, std::string type);
-        void    announce(void);
-};
+int     main(void)
+{
+    Human bob;
+
+    std::cout << bob.identify() <<std::endl;
+    std::cout << bob.getBrain().identify() <<std::endl;
+}

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 16:33:42 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/25 13:18:11 by yechoi           ###   ########.fr       */
+/*   Created: 2020/10/25 14:00:25 by yechoi            #+#    #+#             */
+/*   Updated: 2020/10/25 15:14:02 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Brain.hpp"
 
-class Zombie {
-    private: 
-        std::string name;
-        std::string type;
-    public:
-        Zombie();
-        Zombie(std::string name, std::string type);
-        void    announce(void);
-};
+const std::string    Brain::identify() const
+{
+    std::ostringstream   address;
+
+    address << this;
+    return (address.str());
+}
