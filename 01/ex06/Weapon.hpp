@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/29 12:51:35 by yechoi            #+#    #+#             */
+/*   Updated: 2020/10/29 12:51:35 by yechoi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 
@@ -10,7 +22,7 @@ class Weapon {
     public:
         Weapon();
         Weapon(std::string type);
-        std::string const& getType(void) const;
+        std::string const& getType(void);
         void    setType(std::string);
 };
 
