@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/07 18:43:56 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/08 15:19:13 by yechoi           ###   ########.fr       */
+/*   Created: 2020/11/08 15:12:52 by yechoi            #+#    #+#             */
+/*   Updated: 2020/11/08 20:59:53 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
-#include <string>
+#include <cmath>
 
 class Fixed
 {
@@ -25,9 +25,16 @@ class Fixed
         Fixed();
         Fixed(const Fixed &ref);
         Fixed & operator=(const Fixed &ref); 
+        Fixed(int const value);
+        Fixed(float const value);
         ~Fixed();
 
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
+        float   toFloat(void) const;
+        int     toInt(void) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed &ref);
+
 #endif
