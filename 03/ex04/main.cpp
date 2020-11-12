@@ -13,23 +13,23 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int     main(void)
 {
     FragTrap    Jennie("Jennie");
     ScavTrap    Lisa("Lisa");
     NinjaTrap   Ninja("Ninja");
+    SuperTrap   Superman("Superman");
     ClapTrap    temp;
-    
-    temp = Ninja;
-    Lisa.takeDamage(Ninja.rangedAttack(Lisa._name));
-    Jennie.takeDamage(Ninja.meleeAttack(Jennie._name));
+
+    Lisa.takeDamage(Superman.rangedAttack(Lisa._name));
+    Jennie.takeDamage(Superman.meleeAttack(Jennie._name));
 
     Lisa.beRepaired(30);
     Jennie.beRepaired(1);
-    Ninja.beRepaired(10);
+    Superman.beRepaired(10);
 
     Ninja.ninjaShoebox(Lisa);
     Ninja.ninjaShoebox(Jennie);
-    Ninja.ninjaShoebox(temp);
 }
