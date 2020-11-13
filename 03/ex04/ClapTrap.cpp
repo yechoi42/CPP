@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 14:35:26 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/10 16:25:34 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/13 15:18:40 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,25 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
     std::cout << _name << " restores " << amount
         << " point(s)!" << std::endl;
+}
+
+unsigned int    ClapTrap::getInfo(const std::string str)
+{
+    if (str == "_hit")
+        return (_hit);
+    else if (str == "_maxHit")
+        return (_maxHit);
+    else if (str == "_energy")
+        return (_energy);
+    else if (str == "_maxEnergy")
+        return (_maxEnergy);
+    else if (str == "_level")
+        return (_level);
+    else if (str == "_meleeDamage")
+        return (_meleeDamage);
+    else if (str == "_rangedDamage")
+        return (_rangedDamage);
+    else if (str == "_armorReduction")
+        return (_armorReduction);
+    return (0);
 }

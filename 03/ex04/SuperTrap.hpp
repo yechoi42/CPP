@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 15:18:02 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/12 16:12:19 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/13 15:52:10 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 
-class SuperTrap: virtual public FragTrap, virtual public NinjaTrap
+class SuperTrap: public FragTrap, public NinjaTrap
 {
     public:
         SuperTrap();

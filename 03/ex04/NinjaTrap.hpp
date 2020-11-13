@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 17:01:24 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/12 15:14:36 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/13 15:14:24 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap 
+class NinjaTrap : virtual public ClapTrap 
 {
     public:
         NinjaTrap();
@@ -25,10 +25,10 @@ class NinjaTrap : public ClapTrap
         NinjaTrap(const NinjaTrap & ref);
         NinjaTrap& operator=(const NinjaTrap & ref);
         ~NinjaTrap();
-        void   ninjaShoebox(const FragTrap & ref);
-        void   ninjaShoebox(const ScavTrap & ref);
-        void   ninjaShoebox(const NinjaTrap & ref);
-        void   ninjaShoebox(const ClapTrap & ref);        
+        void	ninjaShoebox(const FragTrap & ref);
+        void	ninjaShoebox(const ScavTrap & ref);
+        void	ninjaShoebox(const NinjaTrap & ref);
+        void    ninjaShoebox(const ClapTrap & ref);        
 };
 
 #endif

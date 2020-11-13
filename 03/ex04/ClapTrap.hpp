@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 14:35:30 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/12 15:07:29 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/13 15:16:19 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ class ClapTrap
         ClapTrap& operator=(const ClapTrap & ref);
         virtual ~ClapTrap();
 
-        std::string     _name;
+        std::string             _name;
         unsigned int    rangedAttack(std::string const & target);
         unsigned int    meleeAttack(std::string const & target);
         void            takeDamage(unsigned int amount);
         void            beRepaired(unsigned int amount);
+        unsigned int    getInfo(const std::string str);
 };
 
 #endif

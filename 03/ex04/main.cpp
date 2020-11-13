@@ -21,10 +21,14 @@ int     main(void)
     ScavTrap    Lisa("Lisa");
     NinjaTrap   Ninja("Ninja");
     SuperTrap   Superman("Superman");
-    ClapTrap    temp;
+    SuperTrap   temp;
+
+
+    temp = Superman;
 
     Lisa.takeDamage(Superman.rangedAttack(Lisa._name));
     Jennie.takeDamage(Superman.meleeAttack(Jennie._name));
+    Superman.takeDamage(Lisa.rangedAttack(Superman._name));
 
     Lisa.beRepaired(30);
     Jennie.beRepaired(1);
