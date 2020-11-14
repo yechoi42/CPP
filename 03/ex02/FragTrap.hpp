@@ -19,24 +19,12 @@
 
 class FragTrap : public ClapTrap
 {
-    // private:
-    //     unsigned int    _hit;
-    //     unsigned int    _maxHit;
-    //     unsigned int    _energy;
-    //     unsigned int    _maxEnergy;
-    //     unsigned int    _level;
-    //     unsigned int    _meleeDamage;
-    //     unsigned int    _rangedDamage;
-    //     unsigned int    _armorReduction;
-
     public:
         FragTrap();
         FragTrap(std::string name);
         FragTrap(const FragTrap & ref);
         FragTrap& operator=(const FragTrap & ref);
         ~FragTrap();
-
-        // std::string     _name;
         void            vaulthunter_dot_exe(std::string const & target);
 };
 

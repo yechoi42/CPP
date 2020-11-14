@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 15:17:58 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/13 15:55:50 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/14 15:36:03 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ SuperTrap::SuperTrap()
     std::cout << _name << ": Superman born!" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name) 
-    : FragTrap(name), NinjaTrap(name)
+SuperTrap::SuperTrap(std::string name)
+    : ClapTrap(name), FragTrap(name), NinjaTrap(name)
 {
     _name = name;
     _hit = FragTrap::getInfo("_hit");

@@ -17,7 +17,7 @@ int     main(void)
     FragTrap Jim;
     FragTrap Jack("Jack");
 
-    Jim = FragTrap("Jim");
+    Jim = FragTrap("Jane");
 
     Jack.takeDamage(Jim.rangedAttack(Jack._name));
     Jim.takeDamage(Jack.meleeAttack(Jim._name));

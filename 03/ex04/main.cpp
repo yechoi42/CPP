@@ -20,20 +20,18 @@ int     main(void)
     FragTrap    Jennie("Jennie");
     ScavTrap    Lisa("Lisa");
     NinjaTrap   Ninja("Ninja");
-    SuperTrap   Superman("Superman");
-    SuperTrap   temp;
+    SuperTrap   *Superman = new SuperTrap("Superman");
 
-
-    temp = Superman;
-
-    Lisa.takeDamage(Superman.rangedAttack(Lisa._name));
-    Jennie.takeDamage(Superman.meleeAttack(Jennie._name));
-    Superman.takeDamage(Lisa.rangedAttack(Superman._name));
+    Lisa.takeDamage(Superman->rangedAttack(Lisa._name));
+    Jennie.takeDamage(Superman->meleeAttack(Jennie._name));
+    Superman->takeDamage(Lisa.rangedAttack(Superman->_name));
 
     Lisa.beRepaired(30);
     Jennie.beRepaired(1);
-    Superman.beRepaired(10);
+    Superman->beRepaired(10);
 
     Ninja.ninjaShoebox(Lisa);
     Ninja.ninjaShoebox(Jennie);
+
+    delete Superman;
 }

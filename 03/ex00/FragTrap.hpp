@@ -29,7 +29,7 @@ class FragTrap
         unsigned int    _armorReduction;
 
     public:
-        std::string _name;
+        std::string     _name;
         FragTrap();
         FragTrap(std::string name);
         FragTrap(const FragTrap & ref);
