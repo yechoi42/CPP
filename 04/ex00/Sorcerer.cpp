@@ -6,18 +6,11 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 16:20:41 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/13 16:41:16 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/14 21:30:05 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
-
-Sorcerer::Sorcerer()
-{
-    _name = "Noname";
-    _title = "anonymous";
-    std::cout << _name << ", "<< _title << ", is born!" << std::endl;    
-}
 
 Sorcerer::Sorcerer(std::string name, std::string title)
 {
@@ -35,6 +28,7 @@ Sorcerer& Sorcerer::operator=(const Sorcerer & ref)
 {
     _name = ref.getName();
     _title = ref.getTitle();
+    std::cout << _name << ", "<< _title << ", is born!" << std::endl;
     return (*this);
 }
 
@@ -54,8 +48,13 @@ std::string Sorcerer::getTitle() const
     return (_title);
 }
 
+void        Sorcerer::polymorph(Victim const & ref) const
+{
+    ref.getPolymorphed();
+}
+
 std::ostream& operator<<(std::ostream& os, const Sorcerer &ref)
 {
     return (os << "I am " << ref.getName() << ", " 
-        << ref.getTitle() << ", and I like ponies!");
+        << ref.getTitle() << ", and I like ponies!") << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 16:11:19 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/13 16:55:45 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/14 21:30:48 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ Victim::~Victim()
 std::string Victim::getName() const
 {
     return (_name);
+}
+
+void        Victim::getPolymorphed() const
+{
+    std::cout << getName() 
+        << " has been turned into a cute little sheep!" << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& os, const Victim &ref)
+{
+    return (os << "I am " << ref.getName() 
+        << " and I like otters!") << std::endl ;
 }
