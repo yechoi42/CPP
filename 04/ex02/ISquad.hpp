@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.hpp                                      :+:      :+:    :+:   */
+/*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 12:11:57 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 14:48:21 by yechoi           ###   ########.fr       */
+/*   Created: 2020/11/16 15:40:26 by yechoi            #+#    #+#             */
+/*   Updated: 2020/11/16 16:59:24 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POWERFIST_HPP
-# define POWERFIST_HPP
+#ifndef ISQUAD_HPP
+# define ISQUAD_HPP
 
-#include "AWeapon.hpp"
+#include <string>
+#include <iostream>
+#include "ISpaceMarine.hpp"
 
-class PowerFist : public AWeapon
+class ISquad
 {
     public:
-        PowerFist();
-        PowerFist(const PowerFist & ref);
-        PowerFist& operator=(const PowerFist & ref);
-        virtual ~PowerFist();
-        virtual void    attack() const;    
+        virtual ~ISquad() {}
+        virtual int getCount() const = 0;
+        virtual ISpaceMarine* getUnit(int) const = 0;
+        virtual int push(ISpaceMarine*) = 0;
 };
 
 #endif

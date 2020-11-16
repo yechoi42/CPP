@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 16:11:08 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/14 21:25:04 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/16 12:55:07 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ Peon::Peon(const Peon & ref)
         
 Peon& Peon::operator=(const Peon & ref)
 {
+    if (this == &ref)
+        return (*this);
     _name = ref.getName();
     std::cout << "Zog zog." << std::endl;
     return (*this);

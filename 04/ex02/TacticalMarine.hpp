@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.hpp                                      :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 12:11:57 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 14:48:21 by yechoi           ###   ########.fr       */
+/*   Created: 2020/11/16 16:03:56 by yechoi            #+#    #+#             */
+/*   Updated: 2020/11/16 16:20:38 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POWERFIST_HPP
-# define POWERFIST_HPP
+#ifndef TACTICALMARINE_HPP
+# define TACTICALMARINE_HPP
 
-#include "AWeapon.hpp"
+#include "ISpaceMarine.hpp"
 
-class PowerFist : public AWeapon
+class TacticalMarine : public ISpaceMarine
 {
     public:
-        PowerFist();
-        PowerFist(const PowerFist & ref);
-        PowerFist& operator=(const PowerFist & ref);
-        virtual ~PowerFist();
-        virtual void    attack() const;    
+        virtual ~TacticalMarine();
+        virtual TacticalMarine* clone() const;
+        virtual void battleCry() const;
+        virtual void rangedAttack() const;
+        virtual void meleeAttack() const;
 };
 
 #endif

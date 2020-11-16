@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 16:20:41 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/14 21:30:05 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/16 12:20:03 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ Sorcerer::Sorcerer(const Sorcerer & ref)
 
 Sorcerer& Sorcerer::operator=(const Sorcerer & ref)
 {
+    if (this == &ref)
+        return (*this); 
     _name = ref.getName();
     _title = ref.getTitle();
     std::cout << _name << ", "<< _title << ", is born!" << std::endl;

@@ -1,28 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.hpp                                      :+:      :+:    :+:   */
+/*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 12:11:57 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 14:48:21 by yechoi           ###   ########.fr       */
+/*   Created: 2020/11/16 17:03:22 by yechoi            #+#    #+#             */
+/*   Updated: 2020/11/16 17:15:21 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POWERFIST_HPP
-# define POWERFIST_HPP
+#include "Squad.hpp"
 
-#include "AWeapon.hpp"
-
-class PowerFist : public AWeapon
+Squad::Squad()
 {
-    public:
-        PowerFist();
-        PowerFist(const PowerFist & ref);
-        PowerFist& operator=(const PowerFist & ref);
-        virtual ~PowerFist();
-        virtual void    attack() const;    
-};
 
-#endif
+}
+
+Squad::Squad(const Squad &ref)
+{
+    
+}
+
+Squad& Squad::operator=(const Squad &ref)
+{
+
+}
+
+Squad::~Squad()
+{
+
+}
+
+int             Squad::getCount() const
+{
+}
+
+ISpaceMarine*   Squad::getUnit(int idx) const
+{
+    for(int i = 0 ; i < idx ; i++)
+    {
+
+    }
+}
+
+int             Squad::push(ISpaceMarine* marine)
+{
+}

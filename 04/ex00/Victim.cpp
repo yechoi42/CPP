@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 16:11:19 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/14 21:30:48 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/16 12:55:38 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ Victim::Victim(const Victim & ref)
 
 Victim& Victim::operator=(const Victim & ref)
 {
+    if (this == &ref)
+        return (*this);
     _name = ref.getName();
     std::cout << "Some random victim called " << _name
         << " just appeared!" << std::endl;
