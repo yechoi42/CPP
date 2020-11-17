@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 16:17:03 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 17:14:25 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/17 11:34:55 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ AssaultTerminator::AssaultTerminator(const AssaultTerminator& ref)
 
 AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator &ref)
 {
-    return (*this);
+    if (this == &ref)
+        return (*this);
+    return (*this);  
 }
 
 AssaultTerminator::~AssaultTerminator()
@@ -35,14 +37,13 @@ AssaultTerminator::~AssaultTerminator()
 
 AssaultTerminator* AssaultTerminator::clone() const
 {
-    AssaultTerminator *copy = new AssaultTerminator;
-    copy = this;
+    AssaultTerminator *copy = new AssaultTerminator(*this);
     return (copy);
 }
 
 void AssaultTerminator::battleCry() const
 {
-    std::cout << "This code is unclean. PURIFY IT!" << std::endl\;
+    std::cout << "This code is unclean. PURIFY IT!" << std::endl;
 }
 
 void AssaultTerminator::rangedAttack() const

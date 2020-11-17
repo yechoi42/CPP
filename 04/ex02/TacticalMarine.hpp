@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 16:03:56 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 16:20:38 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/17 11:41:57 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 class TacticalMarine : public ISpaceMarine
 {
     public:
+        TacticalMarine();
+        TacticalMarine(const TacticalMarine& ref);
+        TacticalMarine& operator=(const TacticalMarine &ref);
         virtual ~TacticalMarine();
         virtual TacticalMarine* clone() const;
         virtual void battleCry() const;

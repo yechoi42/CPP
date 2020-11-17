@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 16:17:12 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 17:13:04 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/17 11:42:44 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ TacticalMarine::TacticalMarine(const TacticalMarine& ref)
 
 TacticalMarine& TacticalMarine::operator=(const TacticalMarine &ref)
 {
+    if (this == &ref)
+        return (*this);
     return (*this);
 }
 
@@ -35,8 +37,7 @@ TacticalMarine::~TacticalMarine()
 
 TacticalMarine* TacticalMarine::clone() const
 {
-    TacticalMarine *copy = new TacticalMarine;
-    copy = this;
+    TacticalMarine *copy = new TacticalMarine(*this);
     return (copy);
 }
 

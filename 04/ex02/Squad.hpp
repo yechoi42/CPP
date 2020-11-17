@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:58:06 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 17:08:53 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/17 11:57:38 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class Squad: public ISquad
 {
     private:
-        typedef struct      s_units
+        typedef struct      s_list
         {
             ISpaceMarine    *_unit;
-            struct s_units  *_next;
-        }                   t_units;
+            struct s_list   *_next;
+        }                   t_list;
         int                 _num;
-        t_units             *_list;
+        t_list             *_list;
     public:
         Squad();
         Squad(const Squad &ref);
