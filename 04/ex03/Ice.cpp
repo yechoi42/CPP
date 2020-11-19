@@ -6,14 +6,15 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 13:46:43 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/17 16:36:59 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/19 10:59:05 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 
 Ice::Ice()
-    : AMateria("Ice")
+    : AMateria("ice")
 {
 }
 
@@ -44,6 +45,6 @@ AMateria*   Ice::clone() const
 void        Ice::use(ICharacter& target)
 {
     AMateria::use(target);
-    std::cout << "* heals " << target.getName() 
-        << "’s wounds *" << std::endl;
+    std::cout << "* shoots an ice bolt at " << 
+        target.getName() << " *" << std::endl;
 }

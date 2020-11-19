@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 16:05:42 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/24 16:15:08 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/17 16:13:52 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ int     main(void)
     ponyOnTheHeap();
     std::cout<<"== pony on the stack =="<<std::endl;
     ponyOnTheStack();
+    return (0);
 }

@@ -6,11 +6,12 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 13:42:02 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/17 16:37:25 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/19 10:59:00 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure()
     : AMateria("cure")
@@ -44,6 +45,6 @@ AMateria*   Cure::clone() const
 void        Cure::use(ICharacter& target)
 {
     AMateria::use(target);
-    std::cout << "* shoots an ice bolt at " << 
-        target.getName() << " *" << std::endl;
+    std::cout << "* heals " << target.getName() 
+        << "’s wounds *" << std::endl;
 }

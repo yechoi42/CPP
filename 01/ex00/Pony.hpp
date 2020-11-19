@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 15:36:46 by yechoi            #+#    #+#             */
-/*   Updated: 2020/10/24 16:17:21 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/17 16:13:45 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ class Pony
 private:
     std::string	name;
 	std::string gender;
-	std::string age;
 public:
     Pony(std::string name, std::string gender);
     ~Pony();
-	void	getInfo(void);
 };
 
 #endif

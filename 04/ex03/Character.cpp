@@ -6,15 +6,18 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:12:04 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/17 17:40:37 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/19 10:59:24 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(std::string name)
-    : _inventory({0})
 {
+    _inventory[0] = 0;
+    _inventory[1] = 0;
+    _inventory[2] = 0;
+    _inventory[3] = 0;
     _name = name;
 }
 
@@ -43,7 +46,12 @@ void Character::equip(AMateria * m)
     for (int i = 0 ; i < 4 ; i++)
     {
         if (_inventory[i] == 0)
+        {
             _inventory[i] = m;
+            std::cout << m->getType() <<  
+                " successfully equiped!" << std::endl;
+            return;
+        }
     }
     return; 
 }
@@ -57,7 +65,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter & target)
 {
-    if (idx >= 4 || _inventory[idx] == 0)
+    if (idx < 0 || idx >= 4 || _inventory[idx] == 0)
         return;
     _inventory[idx]->use(target);
 }

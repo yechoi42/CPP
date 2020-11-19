@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:51:54 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/17 17:41:01 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/19 10:12:01 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <string>
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
 class ICharacter
 {
