@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:12 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/21 21:02:00 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/21 22:56:42 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Bureaucrat
 
         void                upGrade();
         void                downGrade();
+        void                signForm(Form& ref, const char* e);
 
         class GradeTooHighException : public std::exception
         {

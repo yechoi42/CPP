@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:09 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/21 21:06:44 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/21 22:56:31 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,27 @@ int                 Bureaucrat::getGrade() const
     return (_grade);
 }
 
-void            Bureaucrat::upGrade()
+void                Bureaucrat::upGrade()
 {
     _grade -= 1;
     if (_grade < 1)
         throw Bureaucrat::GradeTooHighException();
 }
 
-void            Bureaucrat::downGrade()
+void                Bureaucrat::downGrade()
 {
     _grade += 1;
     if (_grade > 150)
         throw Bureaucrat::GradeTooLowException();
+}
+
+void                Bureaucrat::signForm(Form& ref, const char *e)
+{
+    if (ref == true)
+        std::cout << _name << " signs " << ref.getName() << std::endl;
+    else
+        std::cout << _name << " cannot sign " << ref.getName()
+            " because " << e << std::endl;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
