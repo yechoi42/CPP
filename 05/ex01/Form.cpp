@@ -11,3 +11,84 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
+
+Form::Form(std::string name, int signGrade, int executeGrade)
+    :_name(name), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)
+{
+    if (_signGrade < 1 || _executeGrade < 1)
+        throw Form::GradeTooHighException();
+    else if (_signGrade > 150 || _executeGrade > 150)
+        throw Form::GradeTooLowException();
+}
+
+Form::Form(const Form& ref)
+    : _name(ref.getName()), _signed(getSigned()),
+        _signGrade(ref.getSignGrade()), _executeGrade(ref.getExecuteGrade())
+{
+    if (_signGrade < 1 || _executeGrade < 1)
+        throw Form::GradeTooHighException();
+    else if (_signGrade > 150 || _executeGrade > 150)
+        throw Form::GradeTooLowException();
+}
+
+Form& Form::operator=(const Form& ref)
+{
+    if (this == &ref)
+        return (*this);
+    _signed = ref.getSigned();
+    if (_signGrade < 1 || _executeGrade < 1)
+        throw Form::GradeTooHighException();
+    else if (_signGrade > 150 || _executeGrade > 150)
+        throw Form::GradeTooLowException();
+    return (*this);
+}
+
+Form::~Form()
+{
+}
+
+std::string         Form::getName() const
+{
+    return (_name);
+}
+
+bool                Form::getSigned() const
+{
+    return (_signed);
+}
+
+int                 Form::getSignGrade() const
+{
+    return (_signGrade);
+}
+
+int                 Form::getExecuteGrade() const
+{
+    return (_executeGrade);
+}
+
+void                Form::beSigned(Bureaucrat& ref)
+{
+    if (_signGrade > ref.getGrade())
+        _signed = true;
+    ref.signForm(*this);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("FormException: Grade too High");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("FormException: Grade too Low");
+}
+
+std::ostream&   operator<<(std::ostream &os, const Form &ref)
+{
+    return (os << ref.getName() << 
+        ", sign status " << ref.getSigned() << 
+        ", sign grade " << ref.getSignGrade() << 
+        ", execute grade " << ref.getExecuteGrade() << std::endl); 
+}

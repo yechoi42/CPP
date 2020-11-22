@@ -15,13 +15,14 @@
 
 #include <string>
 #include <iostream>
-#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
     private:
         const std::string   _name;
-        bool                _signed = false;
+        bool                _signed;
         const int           _signGrade;
         const int           _executeGrade;
         Form();
@@ -52,6 +53,6 @@ class Form
         };
 };
 
-std::ostream&   operator<<(std::ostream &os, const Bureaucrat &ref);
+std::ostream&   operator<<(std::ostream &os, const Form &ref);
 
 #endif
