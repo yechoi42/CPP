@@ -72,7 +72,8 @@ void                Form::beSigned(Bureaucrat& ref)
 {
     if (_signGrade > ref.getGrade())
         _signed = true;
-    ref.signForm(*this);
+    else    
+        throw Form::GradeTooLowException();
 }
 
 const char* Form::GradeTooHighException::what() const throw()

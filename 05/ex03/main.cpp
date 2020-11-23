@@ -6,38 +6,47 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:14 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/23 11:32:50 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/23 15:13:37 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int     main(void)
 {
-    std::cout << "\033[1;31mVARIOUS FORM CLASSES TEST\033[0m" << std::endl;
+    std::cout << "\033[1;31mINTERN CLASS TEST\033[0m" << std::endl;
 
-    std::cout << "\033[0;40;34mtry to execute without sign\033[0m" << std::endl;
-    ShrubberyCreationForm S("home");
-    Bureaucrat A("Yeji", 130);
-    A.executeForm(S);
+    Intern A;
+    Intern B;
+    Intern C;
 
-    std::cout << "\033[0;40;34mtry to execute with sign\033[0m" << std::endl;
-    A.signForm(S);
-    A.executeForm(S);
-    
-    std::cout << "\033[0;40;34mtry to execute Presidential Pardon Form with low grade\033[0m" << std::endl;
-    PresidentialPardonForm P("Trump");
-    Bureaucrat B("Zuno", 20); // enough grade to sign but not enough to execute
-    B.signForm(P);
-    B.executeForm(P);
+    std::cout << "\033[0;40;34mmake Shrubbery Creation Form\033[0m" << std::endl;
+    Form* S = A.makeForm("shrubbery creation", "tree");
 
-    std::cout << "\033[0;40;34mtry to execute Robotomy Request Form with sufficient grade\033[0m" << std::endl;
-    RobotomyRequestForm R("BMO");
-    Bureaucrat C("Jake", 30); // enough grade to sign but not enough to execute
-    C.signForm(R);
-    C.executeForm(R);    
+    std::cout << "\033[0;40;34mbureaucrat with sufficient grade signs\033[0m" << std::endl;
+    Bureaucrat Yeji = Bureaucrat("Yeji", 130);
+    Yeji.signForm(*S);
+    std::cout << "\033[0;40;34mbureaucrat with sufficient grade executes\033[0m" << std::endl;
+    Yeji.executeForm(*S);
+
+    std::cout << std::endl;
+    std::cout << "\033[0;40;34mmake Presidential Pardon Form\033[0m" << std::endl;
+    B.makeForm("presidential pardon", "trump");
+
+    std::cout << std::endl;
+    std::cout << "\033[0;40;34mmake Robotomy Request Form\033[0m" << std::endl;
+    C.makeForm("robotomy request", "BMO");
+
+    std::cout << std::endl;
+    std::cout << "\033[0;40;34mmake Invalid Form\033[0m" << std::endl;
+    try
+    {
+        C.makeForm("invalid", "hoho");
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    return (0);    
 }

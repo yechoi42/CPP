@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:09 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/22 23:17:07 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/23 11:25:02 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,17 @@ void                Bureaucrat::downGrade()
 
 void                Bureaucrat::signForm(Form& ref)
 {
-    if (ref.getSigned() == true)
-        std::cout << _name << " signs " << ref.getName() << std::endl;
-    else
-        std::cout << _name << " cannot sign " << ref.getName()
-            << " because grade is low." << std::endl;
+    try
+    {
+        ref.beSigned(*this);
+        std::cout << _name << " signs " << ref.getName() << "." << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << _name << " cannot sign " << ref.getName() << "because ";
+        std::cerr << e.what() << '\n';
+    }
+    
 }
 
 void                Bureaucrat::executeForm(Form const & form)
@@ -85,12 +91,13 @@ void                Bureaucrat::executeForm(Form const & form)
     try
     {
         form.execute(*this);
+        std::cout << getName() << " executes " << form.getName() << "." << std::endl;
     }
     catch(const std::exception& e)
     {
+        std::cout << getName() << " cannot execute " << form.getName() << " because ";
         std::cerr << e.what() << '\n';
     }
-    std::cout << getName() << " executes " << form.getName() << std::endl;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
