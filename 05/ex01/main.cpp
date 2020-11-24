@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:14 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/22 22:49:58 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/24 09:23:40 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,16 @@ int     main(void)
     Bureaucrat D("D", 5);
     try
     {
-        formA.beSigned(D);
+        D.signForm(formA);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+    
     try
     {
-        formB.beSigned(D);
+        D.signForm(formB);
     }
     catch(const std::exception& e)
     {

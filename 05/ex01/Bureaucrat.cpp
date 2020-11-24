@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:09 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/23 14:43:09 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/24 09:24:04 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void                Bureaucrat::signForm(Form& ref)
     }
     catch(const std::exception& e)
     {
-        std::cout << _name << " cannot sign " << ref.getName() << "because ";
+        std::cout << _name << " cannot sign " << ref.getName() << " because ";
         std::cerr << e.what() << '\n';
     }
 }

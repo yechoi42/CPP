@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:34:41 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/23 15:12:24 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/24 09:26:00 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Form*   Intern::makeForm(std::string formName, std::string target)
     {
         if (formName == targets[i])
         {
-            std::cout << "Intern creates " << formName << "form." << std::endl;
+            std::cout << "Intern creates " << formName << " form." << std::endl;
             result = forms[i];
             continue;
         }
