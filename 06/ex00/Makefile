@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/11/25 17:42:24 by yechoi            #+#    #+#              #
-#    Updated: 2020/11/25 17:42:24 by yechoi           ###   ########.fr        #
+#    Created: 2020/11/25 13:53:38 by yechoi            #+#    #+#              #
+#    Updated: 2020/11/25 13:53:38 by yechoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp Convert.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
@@ -18,7 +18,7 @@ CC			=	clang++
 
 FLAG		= 	-Wall -Wextra -Werror
 
-INCLUDES	= 	-I.
+INCLUDES	= 	-I./
 
 NAME		=	convert
 
