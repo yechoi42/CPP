@@ -1,0 +1,38 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/11/25 21:10:58 by yechoi            #+#    #+#              #
+#    Updated: 2020/11/25 21:10:58 by yechoi           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+SRCS		=	main.cpp A.cpp B.cpp C.cpp
+
+OBJS		= 	$(SRCS:.cpp=.o)
+
+CC			=	clang++
+
+FLAG		= 	-Wall -Wextra -Werror
+
+INCLUDES	= 	-I./
+
+NAME		=	convert
+
+$(NAME)		:	all
+
+all			: $(OBJS)
+		$(CC) $(FLAG) $(SRCS) -o $(NAME) $(INCLUDES)
+
+clean		:
+		rm -rf $(OBJS)
+
+fclean		: clean
+		rm -rf $(NAME)
+
+re			: fclean clean
+
+.PHONY 		: all clean fclean re
