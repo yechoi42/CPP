@@ -48,7 +48,6 @@ void    identify_from_reference(Base &p)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
     }
     try
     {
@@ -58,7 +57,6 @@ void    identify_from_reference(Base &p)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
     }
     try
     {
@@ -68,7 +66,6 @@ void    identify_from_reference(Base &p)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
     }
 }
 
