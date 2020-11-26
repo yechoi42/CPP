@@ -75,6 +75,7 @@ int     main(void)
     p = generate();
     identify_from_pointer(p);
     identify_from_reference(*p);
+    delete p;
 
     std::cout << "============" << std::endl;
     
@@ -82,6 +83,7 @@ int     main(void)
     p2 = generate();
     identify_from_pointer(p2);
     identify_from_reference(*p2);
+    delete p2;
 
     std::cout << "============" << std::endl;
     
@@ -89,6 +91,7 @@ int     main(void)
     p3 = generate();
     identify_from_pointer(p3);
     identify_from_reference(*p3);
+    delete p3;
 
     std::cout << "============" << std::endl;
     
@@ -96,6 +99,7 @@ int     main(void)
     p4 = generate();
     identify_from_pointer(p4);
     identify_from_reference(*p4);
+    delete p4;
 
     std::cout << "============" << std::endl;
     
@@ -103,4 +107,13 @@ int     main(void)
     p5 = generate();
     identify_from_pointer(p5);
     identify_from_reference(*p5);
+    delete p5;
+
+    std::cout << "============" << std::endl;
+    
+    Base* p6;
+    p6 = generate();
+    identify_from_pointer(p6);
+    identify_from_reference(*p6);
+    delete p6;
 }

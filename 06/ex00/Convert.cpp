@@ -56,8 +56,7 @@ void    Convert::toChar()
 void    Convert::toInt()
 {
     std::cout << "int: ";
-    if (std::isnan(_input) || std::isinf(_input) ||
-            _input < INT_MIN_DOUBLE || _input > INT_MAX_DOUBLE)
+    if (std::isnan(_input) || std::isinf(_input))
         throw Convert::ImpossibleException();
     std::cout << static_cast<int>(_input) << std::endl;
 }
