@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:14 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/24 09:19:17 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/24 13:56:03 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int     main(void)
 {
     std::cout << "\033[1;31mBUREAUCRAT CLASS TEST\033[0m" << std::endl;
 
+    Bureaucrat Y;
     Bureaucrat A("A", 1);
     Bureaucrat B("B", 150);
     Bureaucrat *D;

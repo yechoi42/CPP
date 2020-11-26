@@ -18,6 +18,9 @@
 #include <limits>
 #include <cmath>
 
+#define INT_MIN_DOUBLE (static_cast<double>(INT_MIN))
+#define INT_MAX_DOUBLE (static_cast<double>(INT_MAX))
+
 class Convert
 {
     private:

@@ -12,9 +12,6 @@
 
 #include "Convert.hpp"
 
-// INT에서 범위 넘어가는 것 처리
-// 42.0f 맥os에서 처리
-
 Convert::Convert(double input)
     :_input(input)
 {
@@ -46,13 +43,12 @@ void    Convert::toChar()
 {
     int integer;
 
-    // std::cout << "**input** " << _input << std::endl;
     std::cout << "char: ";
     integer = static_cast<int>(_input);
     if (integer - _input != 0)
         throw Convert::ImpossibleException();
-    else if (_input >= 32 && _input <= 126)
-        std::cout << static_cast<char>(_input);
+    else if (integer >= 32 && integer <= 126)
+        std::cout << "'" << static_cast<char>(_input) << "'" << std::endl;
     else
         throw Convert::NonDisplayableException();
 }
@@ -60,7 +56,8 @@ void    Convert::toChar()
 void    Convert::toInt()
 {
     std::cout << "int: ";
-    if (std::isnan(_input) || std::isinf(_input))
+    if (std::isnan(_input) || std::isinf(_input) ||
+            _input < INT_MIN_DOUBLE || _input > INT_MAX_DOUBLE)
         throw Convert::ImpossibleException();
     std::cout << static_cast<int>(_input) << std::endl;
 }

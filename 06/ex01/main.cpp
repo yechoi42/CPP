@@ -45,4 +45,10 @@ int main(void)
 
     std::cout << des->s1 << std::endl;
     std::cout << des->s2 << std::endl;
+
+    void    *data2 = serialize();
+    Data    *des2= deserialize(data2);
+
+    std::cout << des2->s1 << std::endl;
+    std::cout << des2->s2 << std::endl;
 }

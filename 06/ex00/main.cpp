@@ -24,7 +24,7 @@ int     main(int argc, char** argv)
     }
     catch(const std::exception& e)
     {
-        std::cerr << typeid(e).name( ) << std::endl;
+        std::cerr << "Invalid Argument" << std::endl;
         return 0;
     }
 

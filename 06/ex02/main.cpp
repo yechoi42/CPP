@@ -18,11 +18,11 @@
 Base    *generate(void)
 {
     Base    *p;
-    int     num = rand() % 3;
+    int     num = rand();
 
-    if (num == 0)
+    if (num % 3 == 0)
         return (p = new A);
-    else if (num == 1)
+    else if (num % 3 == 1)
         return (p = new B);
     else
         return (p = new C);
@@ -72,8 +72,35 @@ void    identify_from_reference(Base &p)
 int     main(void)
 {
     Base* p;
-
     p = generate();
     identify_from_pointer(p);
     identify_from_reference(*p);
+
+    std::cout << "============" << std::endl;
+    
+    Base* p2;
+    p2 = generate();
+    identify_from_pointer(p2);
+    identify_from_reference(*p2);
+
+    std::cout << "============" << std::endl;
+    
+    Base* p3;
+    p3 = generate();
+    identify_from_pointer(p3);
+    identify_from_reference(*p3);
+
+    std::cout << "============" << std::endl;
+    
+    Base* p4;
+    p4 = generate();
+    identify_from_pointer(p4);
+    identify_from_reference(*p4);
+
+    std::cout << "============" << std::endl;
+    
+    Base* p5;
+    p5 = generate();
+    identify_from_pointer(p5);
+    identify_from_reference(*p5);
 }

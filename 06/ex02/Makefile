@@ -22,10 +22,11 @@ INCLUDES	= 	-I./
 
 NAME		=	convert
 
-$(NAME)		:	all
 
-all			: $(OBJS)
-		$(CC) $(FLAG) $(SRCS) -o $(NAME) $(INCLUDES)
+all			: $(NAME)
+
+$(NAME)		: $(OBJS)
+		$(CC) $(FLAG) $(OBJS) -o $(NAME) $(INCLUDES)
 
 clean		:
 		rm -rf $(OBJS)
@@ -33,6 +34,6 @@ clean		:
 fclean		: clean
 		rm -rf $(NAME)
 
-re			: fclean clean
+re			: fclean all
 
 .PHONY 		: all clean fclean re
