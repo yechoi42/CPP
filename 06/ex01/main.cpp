@@ -24,12 +24,11 @@ void    *serialize(void)
 {
     int     i;
     char    *ptr;
-    char    alpha[] = "abcdefghijklmnopqrstuvwxyz";
     char    alphanum[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
     ptr = new char[20];
     for (i = 0; i < 8; i++)
-        ptr[i] = alpha[rand() % 25];
+        ptr[i] = alphanum[rand() % 25];
     *reinterpret_cast<int*>(ptr + 8) = rand();
     for (i = 12; i < 20 ; i++)
         ptr[i]= alphanum[rand() % 35];
@@ -49,9 +48,9 @@ Data    *deserialize(void *raw)
 int main(void)
 {
     void    *data = serialize();
-    Data    *des= deserialize(data);
+    Data    *des                                                                                                                                                                                                                                                                                                                                                                                                                    = deserialize(data);
 
-    std::cout << sizeof(*((char*)des)) << std::endl;
+    std::cout << sizeof(*(Data*)des) << std::endl;
     std::cout << des->s1 << std::endl;
     std::cout << des->n << std::endl;
     std::cout << des->s2 << std::endl;
