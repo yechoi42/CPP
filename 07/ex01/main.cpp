@@ -25,4 +25,7 @@ int main(void)
 
     int arr2[3] = {2, 4, 6};
     iter(arr2, 3, func);
+
+    std::string arr3[3] = {"yeji", "jihyun", "zuno"};
+    iter(arr3, 3, func);
 }

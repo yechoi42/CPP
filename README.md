@@ -55,3 +55,8 @@
 - static_cast
 - reinterpret_cast
 - dynamic_cast
+
+
+#### CPP07
+- template
+- class template
