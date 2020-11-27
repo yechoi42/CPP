@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "whatever.hpp"
+#include "Awesome.hpp"
 
 int main(void)
 {
@@ -71,4 +72,19 @@ int main(void)
     std::cout << "min: " << min4 << std::endl;
     std::string max4 = ::max(h, i);
     std::cout << "max: " << max4 << std::endl;
+
+    std::cout << "\033[1;31mAWESOME TEST\033[0m" << std::endl;
+    Awesome j(20);
+    Awesome k(30);
+
+    std::cout << "j: " << j.getN() << std::endl;
+    std::cout << "k: " << k.getN() << std::endl;
+    swap(&j, &k);
+    std::cout << "** after swap **" << std::endl;
+    std::cout << "j: " << j.getN() << std::endl;
+    std::cout << "k: " << k.getN() << std::endl;
+    Awesome min5 = ::min(j, k);
+    std::cout << "min: " << min5.getN() << std::endl;
+    Awesome max5 = ::max(j, k);
+    std::cout << "max: " << max5.getN() << std::endl;
 }
