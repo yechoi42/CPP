@@ -12,12 +12,6 @@
 
 #include "iter.hpp"
 
-template <typename T>
-void    func(T &a)
-{
-    std::cout << a << ": Merry Christmas!" << std::endl;
-}
-
 int main(void)
 {
     char arr1[3] = {'a', 'b', 'c'};
@@ -28,4 +22,10 @@ int main(void)
 
     std::string arr3[3] = {"yeji", "jihyun", "zuno"};
     iter(arr3, 3, func);
+
+    int tab[] = { 0, 1, 2, 3, 4 };
+    Awesome tab2[5];
+    iter(tab, 5, print);
+    iter(tab2, 5, print);
+    return 0;
 }
