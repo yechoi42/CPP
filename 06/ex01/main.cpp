@@ -22,37 +22,38 @@ struct Data
 
 void    *serialize(void)
 {
-    int     i;
     char    *ptr;
     char    alphanum[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
     srand(time(0));
     ptr = new char[20];
-    for (i = 0; i < 8; i++)
+    for (int i = 0; i < 8; i++)
+    {
         ptr[i] = alphanum[rand() % 35];
-    *reinterpret_cast<int*>(ptr + 8) = rand();
-    for (i = 12; i < 20 ; i++)
+    }
+    *(reinterpret_cast<int*>(ptr + 8)) = rand();
+    for (int i = 12; i < 20 ; i++)
+    {
         ptr[i]= alphanum[rand() % 35];
-    return (ptr);
+    }
+    return (reinterpret_cast<void*>(ptr));
 }
 
 Data    *deserialize(void *raw)
 {
-    Data *data = new Data;
-    data->s1 = std::string(static_cast<char*>(raw), 8);
-    data->n = *reinterpret_cast<int*>(static_cast<char*>(raw) + 8);
-    data->s2 = std::string(static_cast<char*>(raw) + 12, 8);
-    return (data);
+    Data *dd = new Data;
+
+    dd->s1 = std::string(static_cast<char*>(raw), 8);
+    dd->n = *reinterpret_cast<int*>(static_cast<char*>(raw) + 8);
+    dd->s2 = std::string(static_cast<char*>(raw) + 12, 8);
+    return (dd);
 }
 
 int main(void)
 {
-    void    *data = serialize();
-    Data    *des;
+    char    *ptr = reinterpret_cast<char*>(serialize());
+    Data    *des = deserialize(ptr);
 
-    des = deserialize(data);                                                                                                                                                                                                                                                                                                                                                                                                             = deserialize(data);
-
-    std::cout << sizeof(*(Data*)des) << std::endl;
     std::cout << sizeof(des->s1) << std::endl;
     std::cout << sizeof(des->n) << std::endl;
     std::cout << sizeof(des->s2) << std::endl;
