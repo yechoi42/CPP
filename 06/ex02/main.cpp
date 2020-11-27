@@ -71,6 +71,8 @@ void    identify_from_reference(Base &p)
 
 int     main(void)
 {
+    srand(time(0));
+
     Base* p;
     p = generate();
     identify_from_pointer(p);
