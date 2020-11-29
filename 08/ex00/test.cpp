@@ -6,8 +6,9 @@
 int main(void)
 {
     int arr[] = {5,4,3,2,1};
-    std::vector<int> v (arr, arr + sizeof(arr) / sizeof(arr[0]) );
 
-    std::vector<int>::iterator it = std::find(v.begin(), v.end(), 20);
+    int *it = std::find(arr, arr + 5, 10);
+    if (it == arr + 5)
+        std::cout <<"Nooo~!" <<  std::endl;
     std::cout << *it << std::endl;
 }

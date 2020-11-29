@@ -22,30 +22,33 @@ struct Data
 
 void    *serialize(void)
 {
-    char    *ptr;
-    char    alphanum[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+    char        *ptr;
+    std::string s1 = "";
+    std::string s2 = "";
+    int         integer;
+    char        alphanum[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
     srand(time(0));
-    ptr = new char[20];
     for (int i = 0; i < 8; i++)
     {
-        ptr[i] = alphanum[rand() % 35];
+        s1 += alphanum[rand() % 35];
+        s2 += alphanum[rand() % 35];
     }
-    *(reinterpret_cast<int*>(ptr + 8)) = rand();
-    for (int i = 12; i < 20 ; i++)
-    {
-        ptr[i]= alphanum[rand() % 35];
-    }
-    return (reinterpret_cast<void*>(ptr));
+    integer = rand();
+    ptr = new char[sizeof(std::string) * 2 + sizeof(int)];
+    memcpy(ptr, reinterpret_cast<char*>(&s1), 24);
+    memcpy(ptr + 24, reinterpret_cast<char*>(&integer), 4);
+    memcpy(ptr + 28, reinterpret_cast<char*>(&s2), 24);
+    return (ptr);
 }
 
 Data    *deserialize(void *raw)
 {
     Data *dd = new Data;
 
-    dd->s1 = std::string(static_cast<char*>(raw), 8);
-    dd->n = *reinterpret_cast<int*>(static_cast<char*>(raw) + 8);
-    dd->s2 = std::string(static_cast<char*>(raw) + 12, 8);
+    dd->s1 = std::string(static_cast<char*>(raw));
+    dd->n = *reinterpret_cast<int*>(static_cast<char*>(raw) + 24);
+    dd->s2 = std::string(static_cast<char*>(raw) + 28);
     return (dd);
 }
 
@@ -54,9 +57,6 @@ int main(void)
     char    *ptr = reinterpret_cast<char*>(serialize());
     Data    *des = deserialize(ptr);
 
-    std::cout << sizeof(des->s1) << std::endl;
-    std::cout << sizeof(des->n) << std::endl;
-    std::cout << sizeof(des->s2) << std::endl;
     std::cout << des->s1 << std::endl;
     std::cout << des->n << std::endl;
     std::cout << des->s2 << std::endl;
