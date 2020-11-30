@@ -21,15 +21,17 @@
 class Convert
 {
     private:
-        double _input;
+        std::string _str;
+        double      _double;
         Convert();
     public:
-        Convert(double input);
+        Convert(std::string str, double value);
         Convert(const Convert& ref);
         Convert&    operator=(const Convert& ref);
         ~Convert();
 
-        double  getInput() const;
+        std::string getStr() const;
+        double      getDouble() const;
 
         class ImpossibleException : public std::exception
         {
