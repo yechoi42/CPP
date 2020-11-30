@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 10:44:04 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/27 13:50:52 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/30 18:07:50 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,13 @@ class Array
             if (idx < 0 || idx >= _n)
                 throw OutofIndex();
             return (_element[idx]);
-        }
+        };
+        const T& operator[](unsigned int idx) const
+        {
+            if (idx < 0 || idx >= _n)
+                throw std::exception();
+            return (_element[idx]);
+        };
         class OutofIndex : public std::exception
         {
             virtual const char* what() const throw()

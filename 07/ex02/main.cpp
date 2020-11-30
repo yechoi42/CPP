@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:00:55 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/27 13:51:48 by yechoi           ###   ########.fr       */
+/*   Updated: 2020/11/30 18:08:52 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,22 @@ int main(int argc, char **argv)
      std::cout << "=======================" << std::endl;
     for (int i = 0; i < string.size(); i++)
         std::cout << "string[" << i << "]: " << string[i] << std::endl;
+
+    std::cout << "======invalid inx======" << std::endl;
+    try
+    {
+        std::cout << string[n] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    if (n > 0)
+    {
+        std::cout << "====change content====" << std::endl;
+        std::cout << "now string[0] is \"bonjour\"" << std::endl;
+        string[0] = "bonjour";
+        for (int i = 0; i < string.size(); i++)
+            std::cout << "string[" << i << "]: " << string[i] << std::endl;
+    }
 }
