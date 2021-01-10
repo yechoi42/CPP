@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Squad.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 17:03:22 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/19 11:20:52 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/11 00:17:01 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ ISpaceMarine*   Squad::getUnit(int idx) const
         return (NULL);   
     curr = _list;
     for(int i = 0 ; i < idx ; i++)
-        curr = _list->_next;
+        curr = curr->_next;
     return (curr->_unit);
 }
 
@@ -96,5 +96,5 @@ int             Squad::push(ISpaceMarine* marine)
         curr = curr->_next;
     curr->_next = newMarine;
     _num++;
-    return (0);
+    return (_num);
 }
