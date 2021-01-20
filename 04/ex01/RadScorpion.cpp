@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RadScorpion.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:59:35 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 15:31:49 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/20 14:30:45 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,4 @@ RadScorpion& RadScorpion::operator=(const RadScorpion & ref)
 RadScorpion::~RadScorpion()
 {
     std::cout << "* SPROTCH *" << std::endl;
-}
-
-void            RadScorpion::takeDamage(int damage)
-{
-    damage -= 3;
-    if (damage >= 0)
-        _hitPoint -= damage;
 }
