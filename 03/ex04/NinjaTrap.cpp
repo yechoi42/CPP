@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 17:01:28 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/12 15:14:40 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/22 23:41:31 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ NinjaTrap::NinjaTrap()
 NinjaTrap::NinjaTrap(std::string name)
     : ClapTrap(name)
 {
-    _hit = 100;
-    _maxHit = 100;
-    _energy = 50;
-    _maxEnergy = 50;
+    _hit = 60;
+    _maxHit = 60;
+    _energy = 120;
+    _maxEnergy = 120;
     _level = 1;
-    _meleeDamage = 20;
-    _rangedDamage = 15;
-    _armorReduction = 3;
+    _meleeDamage = 60;
+    _rangedDamage = 5;
+    _armorReduction = 0;
     std::cout << _name << ": Hoy!" << std::endl;
 }
 
