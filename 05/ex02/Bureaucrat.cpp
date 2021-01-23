@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:09 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/23 11:25:02 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/24 01:25:28 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,18 @@ int                 Bureaucrat::getGrade() const
     return (_grade);
 }
 
-void                Bureaucrat::upGrade()
+void            Bureaucrat::upGrade()
 {
-    _grade -= 1;
-    if (_grade < 1)
+    if (_grade <= 1)
         throw Bureaucrat::GradeTooHighException();
+    _grade -= 1;
 }
 
-void                Bureaucrat::downGrade()
+void            Bureaucrat::downGrade()
 {
-    _grade += 1;
-    if (_grade > 150)
+    if (_grade >= 150)
         throw Bureaucrat::GradeTooLowException();
+    _grade += 1;
 }
 
 void                Bureaucrat::signForm(Form& ref)

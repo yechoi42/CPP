@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:44:09 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/21 21:06:44 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/24 01:25:11 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ int                 Bureaucrat::getGrade() const
 
 void            Bureaucrat::upGrade()
 {
-    _grade -= 1;
-    if (_grade < 1)
+    if (_grade <= 1)
         throw Bureaucrat::GradeTooHighException();
+    _grade -= 1;
 }
 
 void            Bureaucrat::downGrade()
 {
-    _grade += 1;
-    if (_grade > 150)
+    if (_grade >= 150)
         throw Bureaucrat::GradeTooLowException();
+    _grade += 1;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
