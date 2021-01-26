@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 17:03:22 by yechoi            #+#    #+#             */
-/*   Updated: 2021/01/11 00:17:01 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/26 23:29:06 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Squad& Squad::operator=(const Squad &ref)
     }
     this->~Squad();
     for (int i = 0 ; i < ref.getCount(); i++)
-        push(ref.getUnit(i));
+        push(ref.getUnit(i)->clone());
     return (*this);
 }
 
