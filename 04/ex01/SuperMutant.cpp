@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   SuperMutant.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yechoi <yechoi@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:41:20 by yechoi            #+#    #+#             */
-/*   Updated: 2020/11/16 15:34:38 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/26 18:50:19 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperMutant.hpp"
 
 SuperMutant::SuperMutant()
-    : Enemy(70, "SuperMutant")
+    : Enemy(170, "SuperMutant")
 {
     std::cout << "Gaaah. Me want smash heads!" <<std::endl;
 }
