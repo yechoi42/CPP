@@ -28,7 +28,7 @@ int     main(int argc, char** argv)
         return 0;
     }
 
-    Convert C(input);
+    Convert C(argv[1], input);
     try
     {
         C.toChar();
