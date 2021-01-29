@@ -6,7 +6,7 @@
 /*   By: yechoi <yechoi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 10:44:04 by yechoi            #+#    #+#             */
-/*   Updated: 2021/01/29 21:10:51 by yechoi           ###   ########.fr       */
+/*   Updated: 2021/01/29 23:34:07 by yechoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Array
                 return (*this);
             _n = ref.size();
             _element = new T[_n];
-            for (int i = 0; i++; i < _n)
+            for (int i = 0; i < _n; i++)
                 _element[i] = ref._element[i];
             return (*this);
         };
