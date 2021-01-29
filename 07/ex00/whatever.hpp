@@ -18,13 +18,13 @@
 #include "Awesome.hpp"
 
 template <typename T>
-void    swap(T* A, T *B)
+void    swap(T& A, T &B)
 {
     T   temp;
 
-    temp = *A;
-    *A = *B;
-    *B = temp;
+    temp = A;
+    A = B;
+    B = temp;
 }
 
 template <typename T>

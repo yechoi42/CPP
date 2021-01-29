@@ -20,7 +20,7 @@ int main(void)
     int b = 10;
     std::cout << "a: " << a << std::endl;
     std::cout << "b: " << b << std::endl;
-    swap(&a, &b);
+    swap(a, b);
     std::cout << "** after swap **" << std::endl;
     std::cout << "a: " << a << std::endl;
     std::cout << "b: " << b << std::endl;
@@ -34,7 +34,7 @@ int main(void)
     float d = 10.3131;
     std::cout << "c: " << c << std::endl;
     std::cout << "d: " << d << std::endl;
-    swap(&c, &d);
+    swap(c, d);
     std::cout << "** after swap **" << std::endl;
     std::cout << "c: " << c << std::endl;
     std::cout << "d: " << d << std::endl;
@@ -49,7 +49,7 @@ int main(void)
 
     std::cout << "e: " << e << std::endl;
     std::cout << "f: " << f << std::endl;
-    swap(&e, &f);
+    swap(e, f);
     std::cout << "** after swap **" << std::endl;
     std::cout << "e: " << e << std::endl;
     std::cout << "f: " << f << std::endl;
@@ -64,7 +64,7 @@ int main(void)
 
     std::cout << "h: " << h << std::endl;
     std::cout << "i: " << i << std::endl;
-    swap(&h, &i);
+    swap(h, i);
     std::cout << "** after swap **" << std::endl;
     std::cout << "h: " << h << std::endl;
     std::cout << "h: " << i << std::endl;
@@ -79,7 +79,7 @@ int main(void)
 
     std::cout << "j: " << j.getN() << std::endl;
     std::cout << "k: " << k.getN() << std::endl;
-    swap(&j, &k);
+    swap(j, k);
     std::cout << "** after swap **" << std::endl;
     std::cout << "j: " << j.getN() << std::endl;
     std::cout << "k: " << k.getN() << std::endl;
